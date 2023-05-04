@@ -2,6 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Video5 from './example/Video5'
+import Video7 from './example/Video7'
+import Video9 from './example/Video9'
+import Video10 from './example/Video10/Video10'
+import Video13 from './example/Video13'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,12 +26,17 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        {/* <Video13
+          // age={25}
+          name={'DungBum'}
+        // address={'DungBum'}
+        /> */}
+        <Video10
+          defaultName={'Dung'}
+          defaultAge={20}
+        />
       </p>
     </div>
   )
