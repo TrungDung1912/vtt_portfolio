@@ -1,4 +1,5 @@
 import { TypeAnimation } from 'react-type-animation';
+import bumyaya from '@/assets/img/hero/img2.jpg'
 
 const HomeCV = () => {
     const handleScrollToAbout = () => {
@@ -18,7 +19,7 @@ const HomeCV = () => {
                         <div className="content hero">
                             <div className="inner_content">
                                 <div className="image_wrap">
-                                    <img src="img/hero/img2.jpg" alt="hero" />
+                                    <img src={bumyaya} alt="hero" />
                                 </div>
                                 <div className="name_holder">
                                     <h3>Trung Dung<span> .Lil Bum</span></h3>

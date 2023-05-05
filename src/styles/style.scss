@@ -455,6 +455,10 @@ img.svg {
                             width: 35px;
                         }
                     }
+
+                    &.active {
+                        color: $color_3;
+                    }
                 }
             }
         }
@@ -776,7 +780,7 @@ img.svg {
     }
 
     .overlay_image.hero {
-        background-image: url(../img/hero/2.jpg);
+        background-image: url(../assets/img/hero/2.jpg);
     }
 
     .overlay_color.hero {
@@ -788,7 +792,7 @@ img.svg {
     }
 
     .overlay_image.testimonial {
-        background-image: url(../img/hero/3.jpg);
+        background-image: url(../assets/img/hero/3.jpg);
     }
 
     .overlay_color.testimonial {
@@ -923,7 +927,7 @@ img.svg {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-
+        
         ul {
             margin: 0px;
             list-style-type: none;
@@ -1413,7 +1417,8 @@ img.svg {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
+    padding-top: 90px;
+    padding-bottom: 50px;
     .arlo_tm_title_holder_wrap {
         margin-bottom: 93px;
     }
@@ -2244,7 +2249,7 @@ img.svg {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
+    padding-bottom: 100px;
     .leftbox {
         width: 40%;
         height: auto;
@@ -2520,7 +2525,7 @@ img.svg {
 .arlo_tm_universal_box_wrap.particle {
     height: 100vh;
     position: relative;
-    background-image: url(../img/hero/2.jpg);
+    background-image: url(../assets/img/hero/2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2541,7 +2546,7 @@ img.svg {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url(../img/hero/2.jpg);
+    background-image: url(../assets/img/hero/2.jpg);
     position: relative;
 
     .overlay {
@@ -2600,7 +2605,7 @@ img.svg {
         }
 
         .overlay_image.top {
-            background-image: url(../img/hero/2.jpg);
+            background-image: url(../assets/img/hero/2.jpg);
         }
 
         .overlay_color.top {
@@ -3234,6 +3239,9 @@ img.svg {
                     font-family: $font-family_2;
                     font-weight: 600;
                     font-size: 19px;
+                    &.active {
+                        color: $color_3
+                    }
                 }
             }
         }

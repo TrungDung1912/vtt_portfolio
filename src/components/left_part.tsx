@@ -1,5 +1,8 @@
 import desktopLogo from '@/assets/img/logo/Bumyaya (5).png'
 import { FiGithub } from 'react-icons/fi'
+import { useState, useEffect } from 'react'
+import { isMobile } from 'react-device-detect';
+
 
 interface IProps {
     showLeftPart: boolean
@@ -7,6 +10,32 @@ interface IProps {
 }
 
 const LeftPart = (props: IProps) => {
+    const [activeTab, setActiveTab] = useState<string>("home")
+
+    useEffect(() => {
+        const { hash } = window.location
+        if (hash) {
+            const tab = hash.replace('#', '')
+            setActiveTab(tab)
+            const section = document.querySelector(`${hash}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }, [])
+
+    const handleClickTab = (tab: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault()
+        setActiveTab(tab)
+        const section = document.querySelector(`#${tab}`);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+                window.location.hash = tab
+            }, 1000)
+        }
+    }
+
     return (
         <>
             <div className={props.showLeftPart === true ? "arlo_tm_leftpart_wrap opened" : "arlo_tm_leftpart_wrap"}>
@@ -16,11 +45,40 @@ const LeftPart = (props: IProps) => {
                     </div>
                     <div className="menu_list_wrap">
                         <ul className="anchor_nav">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#skill">Skills</a></li>
-                            <li><a href="#project">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li>
+                                <a
+                                    onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => handleClickTab('home', e)}
+                                    href="#home"
+                                    className={activeTab === 'home' ? "active" : ""}>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => handleClickTab('about', e)}
+                                    href="#about"
+                                    className={activeTab === 'about' ? "active" : ""}>
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => handleClickTab('skill', e)}
+                                    href="#skill" className={activeTab === 'skill' ? "active" : ""}>
+                                    Skills
+                                </a>
+                            </li>
+                            <li>
+                                <a onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => handleClickTab('project', e)}
+                                    href="#project" className={activeTab === 'project' ? "active" : ""}>
+                                    Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a onClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => handleClickTab('contact', e)}
+                                    href="#contact"
+                                    className={activeTab === 'contact' ? "active" : ""}>
+                                    Contact
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div className="leftpart_bottom">
@@ -33,9 +91,12 @@ const LeftPart = (props: IProps) => {
                             </ul>
                         </div>
                     </div>
-                    <a className={props.showLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
-                        onClick={() => props.setShowLeftPart(!props.showLeftPart)} href="#">
-                        <i className={props.showLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i></a>
+                    {isMobile &&
+                        <a className={props.showLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
+                            onClick={(e) => { e.preventDefault(), props.setShowLeftPart(!props.showLeftPart) }} href="#">
+                            <i className={props.showLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i>
+                        </a>
+                    }
                 </div>
             </div>
         </>
