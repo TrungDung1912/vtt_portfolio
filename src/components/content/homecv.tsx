@@ -24,8 +24,6 @@ const HomeCV = () => {
                                             sequence={[
                                                 'Freelance', // Types 'One'
                                                 2000, // Waits 1s
-                                                'UI/UX Designer', // Deletes 'One' and types 'Two'
-                                                2000, // Waits 2s
                                                 'Web Developer',
                                                 2000, // Types 'Three' without deleting 'Two'
                                                 () => {

@@ -231,6 +231,13 @@ svg {
     height: 15px;
 }
 
+.icon {
+    svg{
+        width: unset;
+        height: unset;
+    }
+}
+
 img.svg {
     width: 15px;
     height: 15px;
@@ -455,8 +462,8 @@ img.svg {
 
     .leftpart_bottom {
         position: absolute;
-        left: 60px;
-        bottom: 38px;
+        left: 90px;
+        bottom: 28px;
 
         .social_wrap {
             width: 100%;
@@ -1184,9 +1191,11 @@ img.svg {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background-color: $background-color_5;
-    padding: 90px 0px;
-    margin-bottom: 100px;
-
+    padding-top: 90px;
+    &:last-child {
+        padding-bottom: 90px;
+        margin-bottom: 100px;
+    }
     .inner_wrap {
         width: 100%;
         height: auto;
@@ -2425,9 +2434,9 @@ img.svg {
     height: auto;
     clear: both;
     float: left;
-    text-align: left;
+    text-align: center;
     background-color: $background-color_2;
-    padding: 50px 0px;
+    padding: 15px 0px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
