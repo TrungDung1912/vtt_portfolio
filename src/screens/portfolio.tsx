@@ -7,11 +7,11 @@ import { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect';
 
 const Portfolio = () => {
-    const [showLeftPart, setShowLeftPart] = useState<boolean>(true)
+    const [hideLeftPart, setHideLeftPart] = useState<boolean>(true)
 
     useEffect(() => {
         if (isMobile) {
-            setShowLeftPart(false)
+            setHideLeftPart(true)
         }
     }, [])
     return (
@@ -37,14 +37,14 @@ const Portfolio = () => {
 
                 {/* <!-- LEFTPART --> */}
                 <LeftPart
-                    showLeftPart={showLeftPart}
-                    setShowLeftPart={setShowLeftPart} />
+                    hideLeftPart={hideLeftPart}
+                    setHideLeftPart={setHideLeftPart} />
                 {/* <!-- /LEFTPART --> */}
 
                 {/* <!-- RIGHTPART --> */}
                 <RightPart
-                    showLeftPart={showLeftPart}
-                    setShowLeftPart={setShowLeftPart} />
+                    hideLeftPart={hideLeftPart}
+                    setHideLeftPart={setHideLeftPart} />
                 {/* <!-- /RIGHTPART --> */}
 
                 {/* <a className="arlo_tm_totop" href="#"></a> */}

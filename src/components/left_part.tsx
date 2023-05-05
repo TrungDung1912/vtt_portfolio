@@ -5,8 +5,8 @@ import { isMobile } from 'react-device-detect';
 
 
 interface IProps {
-    showLeftPart: boolean
-    setShowLeftPart: (value: boolean) => void
+    hideLeftPart: boolean
+    setHideLeftPart: (value: boolean) => void
 }
 
 const LeftPart = (props: IProps) => {
@@ -38,7 +38,7 @@ const LeftPart = (props: IProps) => {
 
     return (
         <>
-            <div className={props.showLeftPart === true ? "arlo_tm_leftpart_wrap opened" : "arlo_tm_leftpart_wrap"}>
+            <div className={props.hideLeftPart === true ? "arlo_tm_leftpart_wrap opened" : "arlo_tm_leftpart_wrap"}>
                 <div className="leftpart_inner">
                     <div className="logo_wrap">
                         <a href="#"><img src={desktopLogo} alt="desktop-logo" /></a>
@@ -91,10 +91,15 @@ const LeftPart = (props: IProps) => {
                             </ul>
                         </div>
                     </div>
-                    {isMobile &&
-                        <a className={props.showLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
-                            onClick={(e) => { e.preventDefault(), props.setShowLeftPart(!props.showLeftPart) }} href="#">
-                            <i className={props.showLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i>
+                    {!isMobile &&
+                        <a className={props.hideLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
+                            onClick={(e) => {
+                                e.preventDefault(),
+                                    props.setHideLeftPart(!props.hideLeftPart)
+                            }}
+                            href="#"
+                        >
+                            <i className={props.hideLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i>
                         </a>
                     }
                 </div>
