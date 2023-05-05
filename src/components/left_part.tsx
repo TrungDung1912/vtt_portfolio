@@ -1,10 +1,15 @@
 import desktopLogo from '@/assets/img/logo/Bumyaya (5).png'
 import { FiGithub } from 'react-icons/fi'
 
-const LeftPart = () => {
+interface IProps {
+    showLeftPart: boolean
+    setShowLeftPart: (value: boolean) => void
+}
+
+const LeftPart = (props: IProps) => {
     return (
         <>
-            <div className="arlo_tm_leftpart_wrap">
+            <div className={props.showLeftPart === true ? "arlo_tm_leftpart_wrap opened" : "arlo_tm_leftpart_wrap"}>
                 <div className="leftpart_inner">
                     <div className="logo_wrap">
                         <a href="#"><img src={desktopLogo} alt="desktop-logo" /></a>
@@ -28,7 +33,9 @@ const LeftPart = () => {
                             </ul>
                         </div>
                     </div>
-                    <a className="arlo_tm_resize" href="#"><i className="xcon-angle-left"></i></a>
+                    <a className={props.showLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
+                        onClick={() => props.setShowLeftPart(!props.showLeftPart)} href="#">
+                        <i className={props.showLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i></a>
                 </div>
             </div>
         </>
