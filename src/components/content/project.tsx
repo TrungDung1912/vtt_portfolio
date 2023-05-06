@@ -15,6 +15,7 @@ interface IProject {
         backend: string;
         member: number;
         role: string;
+        demo: string;
         github: string;
     }
 }
@@ -41,6 +42,7 @@ const Project = () => {
                 backend: "Java Servlet / Apache Tomcat / MySQLServer",
                 member: 5,
                 role: "Leader, Tester, Developer",
+                demo: "",
                 github: "https://gitlab.com/maitranhuy1709/SWP_SE1640_GR3.git"
             }
         },
@@ -57,7 +59,8 @@ const Project = () => {
                 backend: "Docker / DBeaver / Postman",
                 member: 1,
                 role: "Developer",
-                github: ""
+                demo: "",
+                github: "https://github.com/TrungDung1912/QuizTest.git"
             }
         },
         {
@@ -73,6 +76,7 @@ const Project = () => {
                 backend: "",
                 member: 1,
                 role: "Developer",
+                demo: "",
                 github: ""
             }
         }
