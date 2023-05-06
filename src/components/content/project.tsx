@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BiBookBookmark } from 'react-icons/bi'
 import { BsArrowReturnRight } from 'react-icons/bs'
 import { RiQuestionAnswerFill } from 'react-icons/ri'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 interface IProject {
     image: JSX.Element;
@@ -40,7 +41,7 @@ const Project = () => {
                 backend: "Java Servlet / Apache Tomcat / MySQLServer",
                 member: 5,
                 role: "Leader, Tester, Developer",
-                github: ""
+                github: "https://gitlab.com/maitranhuy1709/SWP_SE1640_GR3.git"
             }
         },
         {
@@ -60,11 +61,11 @@ const Project = () => {
             }
         },
         {
-            image: <BiBookBookmark
+            image: <AiOutlineShoppingCart
                 size={"50"}
                 color={'#433'}
             />,
-            title: "Online Debt Book",
+            title: "Tiki Clone",
             shortDescription: "Help people can manage their debt more handy dandy!",
             detail: {
                 description: "(Self management the own or the debt in the era 4.0)",//Miêu tả dự án làm gì
