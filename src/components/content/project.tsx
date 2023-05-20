@@ -4,6 +4,7 @@ import { BiBookBookmark } from 'react-icons/bi'
 import { BsArrowReturnRight } from 'react-icons/bs'
 import { RiQuestionAnswerFill } from 'react-icons/ri'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { SiPhpmyadmin } from 'react-icons/si'
 
 interface IProject {
     image: JSX.Element;
@@ -66,13 +67,31 @@ const Project = () => {
         {
             image: <AiOutlineShoppingCart
                 size={"50"}
-                color={'#433'}
+                color={'#833'}
             />,
             title: "Tiki Clone",
             shortDescription: "Help people can manage their debt more handy dandy!",
             detail: {
                 description: "(Self management the own or the debt in the era 4.0)",//Miêu tả dự án làm gì
                 frontend: "",
+                backend: "",
+                member: 1,
+                role: "Developer",
+                demo: "",
+                github: ""
+            }
+        }
+        ,
+        {
+            image: <SiPhpmyadmin
+                size={"50"}
+                color={'#233'}
+            />,
+            title: "Portfolio",
+            shortDescription: "My portfolio!",
+            detail: {
+                description: "Basic design portfolio/cv",//Miêu tả dự án làm gì
+                frontend: "Typescript / HTML / CSS / JavaScript/ React JS",
                 backend: "",
                 member: 1,
                 role: "Developer",
